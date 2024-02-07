@@ -1,0 +1,3 @@
+[toolchain]
+channel = "beta"
+components = [ "cargo", "rustfmt", "rust-analyzer", "rust-src" ]
