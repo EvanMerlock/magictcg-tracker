@@ -19,8 +19,14 @@
             inherit system overlays;
           };
           rustToolchain = pkgs.pkgsBuildHost.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
-          nativeBuildInputs = with pkgs; [ rustToolchain rust-analyzer-unwrapped pkg-config ];
-          buildInputs = with pkgs; [ ];
+          nativeBuildInputs = with pkgs; [ 
+            rustToolchain 
+            rust-analyzer-unwrapped 
+            pkg-config
+          ];
+          buildInputs = with pkgs; [
+            darwin.apple_sdk.frameworks.SystemConfiguration
+          ];
         in
         with pkgs;
         {
